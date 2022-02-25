@@ -205,7 +205,8 @@ export type EventName =
   | "DEFAULT_CONFIGURATION_EDIT_BUTTON_CLICK"
   | "DEFAULT_CONFIGURATION_CHECKBOX_TOGGLED"
   | "CONNECT_BUTTON_ON_GIT_SYNC_MODAL_CLICK"
-  | "DATASOURCE_AUTH_COMPLETE";
+  | "DATASOURCE_AUTH_COMPLETE"
+  | "RUN_JS_FUNCTION";
 
 function getApplicationId(location: Location) {
   const pathSplit = location.pathname.split("/");
