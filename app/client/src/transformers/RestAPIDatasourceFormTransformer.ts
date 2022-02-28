@@ -18,6 +18,8 @@ import _ from "lodash";
 export const datasourceToFormValues = (
   datasource: Datasource,
 ): ApiDatasourceForm => {
+  // Set authType === NONE if the authType is dbAuth.
+  //  Todo , Confirm from the backend team.
   const authType =
     _.get(
       datasource,
