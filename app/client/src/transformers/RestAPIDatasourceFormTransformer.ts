@@ -18,11 +18,17 @@ import _ from "lodash";
 export const datasourceToFormValues = (
   datasource: Datasource,
 ): ApiDatasourceForm => {
-  const authType = _.get(
-    datasource,
-    "datasourceConfiguration.authentication.authenticationType",
-    AuthType.NONE,
-  );
+  const authType =
+    _.get(
+      datasource,
+      "datasourceConfiguration.authentication.authenticationType",
+    ) === "dbAuth"
+      ? AuthType.NONE
+      : _.get(
+          datasource,
+          "datasourceConfiguration.authentication.authenticationType",
+          AuthType.NONE,
+        );
   const connection = _.get(datasource, "datasourceConfiguration.connection", {
     ssl: {
       authType: SSLType.DEFAULT,
